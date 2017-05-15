@@ -56,3 +56,6 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Android APK's
+*.apk
