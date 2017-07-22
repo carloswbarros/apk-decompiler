@@ -25,3 +25,6 @@ This project couldn't be made without this awesome tools
 
 # License
 [GNU General Public License v2.0](LICENSE.md)
+
+# Donations
+Bitcoin address: 16mCUENGwoXH77tPYiHUHT3MtjcFgbHRKs
