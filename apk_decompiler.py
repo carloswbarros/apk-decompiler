@@ -15,7 +15,7 @@ jd_path = tools_path + "/jd-cli/jd-cli"
 apktool_path = tools_path + "/apktool/apktool"
 
 
-def decompile_apk(apk_path, output_path, verbose):
+def decompile_apk(apk_path, output_path, verbose, odex_file=None):
     print("[+] Decompiling the apk\n")
 
     if verbose:
@@ -49,6 +49,9 @@ def decompile_apk(apk_path, output_path, verbose):
     zip_ref.close()
 
     apk_classes = apk_unziped_dir + "/classes.dex"
+    if odex_file is not None:
+        apk_classes = odex_file
+
     if not os.path.exists(apk_classes):
         print("[-] Error: the apk doesn't have the classes.dex")
         return
@@ -98,6 +101,9 @@ def get_args():
     parser.add_argument("-o", "--output-dir", help="Output directory",
                         required=False, default=".")
 
+    parser.add_argument("-x", "--odex-file", help="Specify odex file",
+                        required=False)
+
     parser.add_argument("-v", "--verbose", help="Enables verbose",
                         required=False, action="store_true", default=False)
 
@@ -131,7 +137,8 @@ def main():
         print("sudo chmod -R +x tools")
         return
 
-    decompile_apk(args.apk, args.output_dir, args.verbose)
+    decompile_apk(args.apk, args.output_dir, args.verbose,
+                  odex_file=args.odex_file)
 
 
 if __name__ == "__main__":

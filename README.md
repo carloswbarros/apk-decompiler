@@ -7,13 +7,15 @@ python3 apk_decompiler.py -a example.apk
 ```
 
 ```
-usage: apk_decompiler.py [-h] -a APK [-o OUTPUT_DIR] [-v]
+usage: apk_decompiler.py [-h] -a APK [-o OUTPUT_DIR] [-x ODEX_FILE] [-v]
 
 optional arguments:
   -h, --help            show this help message and exit
   -a APK, --apk APK     Apk file
   -o OUTPUT_DIR, --output-dir OUTPUT_DIR
                         Output directory
+  -x ODEX_FILE, --odex-file ODEX_FILE
+                        Specify odex file
   -v, --verbose         Enables verbose '''
 ```
 
